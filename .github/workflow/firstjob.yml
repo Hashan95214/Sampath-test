@@ -1,1 +1,16 @@
-name: 
+name: my sirtst job
+
+on: push
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: welcome message
+      run: echo "hello world"
+
+    - name: listing the files
+      run: ls
+
+    - name: content of the readme
+      cat README.txt
