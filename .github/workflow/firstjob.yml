@@ -3,14 +3,18 @@ name: my sirtst job
 on: push
 
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: welcome message
-      run: echo "hello world"
+    - name: install docker
+      run: apt install docker
 
-    - name: listing the files
+    - name: actions/checkout@v4
       run: ls
 
-    - name: content of the readme
-      cat README.txt
+    - name: read the docker file
+      run: cat Dockerfile
+
+    - name: build the image from the docker file
+      run: docker build -t nginx:v4 .
+      
