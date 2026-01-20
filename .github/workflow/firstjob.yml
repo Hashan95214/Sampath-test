@@ -18,3 +18,4 @@ jobs:
     - name: build the image from the docker file
       run: docker build -t nginx:v4 .
       
+      
